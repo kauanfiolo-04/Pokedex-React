@@ -1,11 +1,12 @@
 import type { PokeCard } from '@/types'
 import Image from 'next/image'
 import TypeInfo from './TypeInfo'
+import Link from 'next/link'
 
 const PokeCard=({id ,name, types, img}:PokeCard)=>{
 
   return (
-    <a href={`/${name}`} className='flex px-2 py-2 justify-center w-full re1:w-[400px] h-[60px] re1:h-[80px] bg-white rounded-lg text-black'>
+    <Link href={`/${name}`} className='flex px-2 py-2 justify-center w-full re1:w-[400px] h-[60px] re1:h-[80px] bg-white rounded-lg text-black'>
       <div className='w-1/4'>
         <Image className='m-auto' alt='poke gif or image' src={img.gif ?? img.url} width={50} height={50}/>
       </div>
@@ -18,7 +19,7 @@ const PokeCard=({id ,name, types, img}:PokeCard)=>{
       <div className='w-1/4'>
           <p className='text-2xl'>#{id.toString().padStart(3, '0')}</p>
       </div>
-    </a>
+    </Link>
   )
 }
 export default PokeCard

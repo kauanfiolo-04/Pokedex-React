@@ -15,7 +15,7 @@ const Pokemon=()=>{
   },[params])
   
   return (
-    <>
+    <div>
       <PokeCard 
         id={pokeInfo?.id ?? 0}
         types={pokeInfo?.types ?? [{ slot:0, type:{name:'normal', url:''} }]}
@@ -25,7 +25,7 @@ const Pokemon=()=>{
           gif: pokeInfo?.sprites.other.showdown.front_default
         }}
       />
-    </>
+    </div>
   )
 }
 
