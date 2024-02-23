@@ -18,7 +18,7 @@ const Pokemon=()=>{
     <>
       <PokeCard 
         id={pokeInfo?.id ?? 0}
-        types={pokeInfo?.types ?? [{ slot:0, type:{name:'', url:''} }]}
+        types={pokeInfo?.types ?? [{ slot:0, type:{name:'normal', url:''} }]}
         name={pokeInfo?.name ?? ''}
         img={{
           url:pokeInfo?.sprites.front_default ?? '',
