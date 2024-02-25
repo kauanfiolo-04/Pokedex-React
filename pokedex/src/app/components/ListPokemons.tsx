@@ -15,10 +15,10 @@ const ListPokemons=({limit, offset}:Props)=>{
 
   useEffect(()=>{
     getPokemons(limit, offset).then(r=>setPokemons(r))
-  },[])
+  },[limit, offset])
 
-  return <ul>{pokemons.map(poke=>
-    <li>
+  return <ul className='flex flex-col gap-2'>{pokemons.map((poke, index)=>
+    <li key={index}>
       <PokeCard
         id={poke?.id ?? 0}
         types={poke?.types ?? [{ slot:0, type:{name:'normal', url:''} }]}
