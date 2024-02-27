@@ -17,8 +17,8 @@ const ListPokemons=({limit, offset}:Props)=>{
     getPokemons(limit, offset).then(r=>setPokemons(r))
   },[limit, offset])
 
-  return <ul className='flex flex-col gap-2'>{pokemons.map((poke, index)=>
-    <li key={index}>
+  return <ul className='flex flex-col gap-2 w-full'>{pokemons.map((poke, index)=>
+    <li key={index} className='w-full flex justify-center'>
       <PokeCard
         id={poke?.id ?? 0}
         types={poke?.types ?? [{ slot:0, type:{name:'normal', url:''} }]}

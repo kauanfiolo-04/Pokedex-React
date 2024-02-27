@@ -9,7 +9,9 @@ export const getPokemon:(name:string)=>Promise<PokeType> =async (name)=>{
 }
 
 export const getPokemons:(limit:number, offset:number)=>Promise<PokeType[]> =async(limit, offset)=>{
-  const pokemons:Array<{name:string, url:string}> =await api.get(`/pokemon?limit=${limit}&offset=${offset}`).then(r=>r.data.results).catch(err=>console.error(err)) ?? []
+  const pokemons:Array<{name:string, url:string}> =await api
+    .get(`/pokemon?limit=${limit}&offset=${offset}`)
+    .then(r=>r.data.results).catch(err=>console.error(err)) ?? []
   const finalPokemons:PokeType[]=[]
 
   for(const poke of pokemons){

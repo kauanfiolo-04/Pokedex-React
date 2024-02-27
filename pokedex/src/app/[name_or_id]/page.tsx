@@ -7,11 +7,11 @@ import { getPokemon } from '../services/servicesAPI'
 import PokeCard from '../components/PokeCard'
 
 const Pokemon=()=>{
-  const params=useParams<{name:string}>()
+  const params=useParams<{name_or_id:string}>()
   const [pokeInfo,setPokeInfo]=useState<PokeType|null>(null)
 
   useEffect(()=>{
-    getPokemon(params.name).then(r=>setPokeInfo(r))
+    getPokemon(params.name_or_id).then(r=>setPokeInfo(r))
   },[params])
   
   return (
