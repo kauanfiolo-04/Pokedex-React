@@ -6,7 +6,7 @@ import Link from 'next/link'
 const PokeCard=({id ,name, types, img}:PokeCard)=>{
 
   return (
-    <Link href={`/${name}`} className='flex px-2 py-2 justify-center w-full re1:w-[400px] h-[60px] re1:h-[80px] bg-white rounded-lg text-black'>
+    <Link href={`/${name}`} className='flex px-2 py-2 justify-center w-full h-[60px] re1:h-[80px] bg-white rounded-lg text-black'>
       <div className='w-1/4'>
         <Image className='m-auto relative w-[50px] h-[50px]' alt='poke gif or image' src={img.gif ?? img.url} width={50} height={50}/>
       </div>
